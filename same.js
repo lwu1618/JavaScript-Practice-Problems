@@ -61,7 +61,6 @@ function same(arr1, arr2) {
   let freqCount2 = {};
 
   for (let num of arr1) {
-    // leet hax way
     freqCount1[num] = ++freqCount1[num] || 1;
   }
   for (let num of arr2) {
@@ -81,6 +80,4 @@ function same(arr1, arr2) {
   }
 }
 
-same([1,2,3], [4,1,9]) // true
-same([1,2,3], [1,9]) // false
-same([1,2,3], [4,4,1]) // false must be same frequency
+module.exports = same;
