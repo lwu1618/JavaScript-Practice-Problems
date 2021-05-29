@@ -39,12 +39,12 @@ The frequency of values must be the same.
 // Using indexOf
 // function same(arr1, arr2) {
 //   if (arr1.length !== arr2.length) {
-//     return false;
+//     return false
 //   }
 //   for(let num of arr1) {
 //     let idx1 = arr2.indexOf(num ** 2)
 //     if (idx1 === -1) {
-//       return false;
+//       return false
 //     } 
 //     arr2.slice(idx1)
 //   }
@@ -57,11 +57,11 @@ function same(arr1, arr2) {
     return false;
   }
 
-  let freqCount1 = {};
-  let freqCount2 = {};
+  let freqCount1 = {}
+  let freqCount2 = {}
 
   for (let num of arr1) {
-    freqCount1[num] = ++freqCount1[num] || 1;
+    freqCount1[num] = ++freqCount1[num] || 1
   }
   for (let num of arr2) {
     // traditional
@@ -76,8 +76,8 @@ function same(arr1, arr2) {
     if (freqCount2[key ** 2] !== freqCount1[key]) {
       return false
     }
-    return true;
+    return true
   }
 }
 
-module.exports = same;
+module.exports = same
