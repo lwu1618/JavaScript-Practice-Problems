@@ -38,9 +38,8 @@ function maxArea(height) {
   height.unshift(0)
   console.log(height)
 
-
   lastX = height.length -1
-  console.log("lastX:", lastX)
+  //console.log("lastX:", lastX)
   for (let i=lastX; i > 0; i--) {
      if (height[lastX] > height[i-1]) {
        continue
