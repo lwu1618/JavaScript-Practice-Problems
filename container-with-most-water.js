@@ -32,6 +32,30 @@
  */
 
 function maxArea(height) {
+  return Math.max(processForward(height), processReverse(height))
+}
+
+function processForward(height) {
+  let area = 0
+  let tmpArea = 0
+
+  console.log(height)
+
+  for (let i=0; i < height.length-1; i++) {
+     if (height[0] > height[i+1]) {
+       continue
+     }
+     tmpArea = height[0] * i+1
+     console.log("processForward tmpArea:",tmpArea)
+     if (tmpArea > area) {
+      area = tmpArea
+      console.log("processForward area:",area)
+     }
+  }
+  return area
+}
+
+function processReverse(height) {
   let area = 0
   let tmpArea = 0
 
@@ -39,7 +63,6 @@ function maxArea(height) {
   console.log(height)
 
   lastX = height.length -1
-  //console.log("lastX:", lastX)
   for (let i=lastX; i > 0; i--) {
      if (height[lastX] > height[i-1]) {
        continue
@@ -54,7 +77,5 @@ function maxArea(height) {
   }
   return area
 }
-
-
 
 module.exports = maxArea
